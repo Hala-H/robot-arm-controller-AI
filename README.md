@@ -14,9 +14,9 @@ Smart Methods internship - Task 1 - AI and Robotics track
 <ol>
   <li> Choose Ubuntu (or your OS) </li>
   <li> Write the following commands in order: </li>
-    <code> sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' </code><br>
-    <code> curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - </code>
-    <code> sudo apt update </code>
+    <code> sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' </code> <br>
+    <code> curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - </code> <br>
+    <code> sudo apt update </code> <br>
     <code> sudo apt install ros-melodic-desktop-full </code>
     <code> echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc </code>
     <code> source ~/.bashrc </code>
