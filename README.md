@@ -17,22 +17,37 @@ Smart Methods internship - Task 1 - AI and Robotics track
     <code> sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' </code> <br>
     <code> curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - </code> <br>
     <code> sudo apt update </code> <br>
-    <code> sudo apt install ros-melodic-desktop-full </code>
-    <code> echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc </code>
-    <code> source ~/.bashrc </code>
-    <code> sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential </code>
-    <code> sudo apt install python-rosdep </code>
-    <code> sudo rosdep init </code>
-    <code> rosdep update </code>
-    <code> roscore </code>
-  <li> Preparing ROSE (installing catkin workspace) </li>
-    <code> source /opt/ros/noetic/setup.bash </code>
-    <code> mkdir -p ~/catkin_ws/src </code>
-    <code> cd ~/catkin_ws/ </code>
+    <code> sudo apt install ros-melodic-desktop-full </code> <br>
+    <code> echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc </code> <br>
+    <code> source ~/.bashrc </code> <br>
+    <code> sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential </code> <br>
+    <code> sudo apt install python-rosdep </code> <br>
+    <code> sudo rosdep init </code> <br>
+    <code> rosdep update </code> <br>
+    <code> roscore </code> <br>
+  <li> Preparing ROSE (installing catkin workspace) </li> 
+    <code> source /opt/ros/noetic/setup.bash </code> <br>
+    <code> mkdir -p ~/catkin_ws/src </code> <br>
+    <code> cd ~/catkin_ws/ </code> <br>
+    <code> catkin_make </code> <br>
+    <code> echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc </code> <br>
+    <code> source ~/.bashrc </code> <br>
+    <code> source devel/setup.bash </code> <br>
+    <code> echo $ROS_PACKAGE_PATH </code> <br>
+    <code> /home/youruser/catkin_ws/src:/opt/ros/kinetic/share </code> <br>
+  <li> Installing the arduino robot arm package from Smart Methods github https://github.com/smart-methods/arduino_robot_arm to the src folder in catkin </li>
+    <code> cd ~/catkin_ws/src </code> <br>
+    <code> sudo apt install git </code> <br>
+    <code> git clone https://github.com/smart-methods/arduino_robot_arm  </code> <br>
+  <li> Installing the dependencies </li>
+    <code> cd ~/catkin_ws </code> <br>
+    <code> rosdep install --from-paths src --ignore-src -r -y </code> <br>
+    <code> 	sudo apt-get install ros-melodic-moveit </code> <br>
+    <code> 	sudo apt-get install ros-melodic-joint-state-publisher ros-melodic-joint-state-publisher-gui </code> <br>
+    <code> 	sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher </code> <br>
+    <code> 	sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control </code> <br>
+  <li> Compiling the package </li>
     <code> catkin_make </code>
-    <code> echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc </code>
-    <code> source ~/.bashrc </code>
-    <code> source devel/setup.bash </code>
-    <code> echo $ROS_PACKAGE_PATH </code>
-    <code> /home/youruser/catkin_ws/src:/opt/ros/kinetic/share </code>
+  <li> Launching Rviz </code>
+    <code> roslaunch robot_arm_pkg check_motors.launch </code>
 </ol>
