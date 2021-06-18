@@ -47,7 +47,16 @@ Smart Methods internship - Task 1 - AI and Robotics track
     <code> 	sudo apt-get install ros-melodic-gazebo-ros-control joint-state-publisher </code> <br>
     <code> 	sudo apt-get install ros-melodic-ros-controllers ros-melodic-ros-control </code> <br>
   <li> Compiling the package </li>
-    <code> catkin_make </code>
+    <code> catkin_make </code> <br>
   <li> Launching Rviz </code>
-    <code> roslaunch robot_arm_pkg check_motors.launch </code>
+    <code> roslaunch robot_arm_pkg check_motors.launch </code> <br>
+  <li> Gazebo </li>
+    <code> roslaunch robot_arm_pkg check_motors.launch </code> <br>
+    <code> roslaunch robot_arm_pkg check_motors_gazebo.launch </code> <br>
+    <code> rosrun robot_arm_pkg joint_states_to_gazebo.py </code> <br>
+  <li> Moveit in Rviz </li>
+    <code> roslaunch moveit_pkg demo.launch </code> <br>
+  <li> Gazebo and Moveit </li>
+    <code> roslaunch moveit_pkg demo_gazebo.launch </code> <br>
+
 </ol>
